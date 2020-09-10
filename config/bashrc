@@ -14,6 +14,13 @@ export PATH="$PATH:/usr/local/bin:$HOME/go/bin:/usr/local/kubebuilder/bin:$HOME/
 # bash-completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+
+# git-prompt
+if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+   __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+   source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
 # direnv
 eval "$(direnv hook bash)"
 
