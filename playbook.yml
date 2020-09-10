@@ -14,17 +14,18 @@
   - name: install Homebrew casks
     homebrew_cask: name={{item}} install_options=appdir=/Applications
     with_items:
+    - docker
     - flux
     - flycut
     - font-inconsolata
     - font-inconsolata-nerd-font
     - goland
-    - google-cloud-sdk
     - google-chrome
+    - google-cloud-sdk
     - istat-menus
     - iterm2
-    - nordvpn
     - ngrok
+    - nordvpn
     - shiftit
     - slack
     - spotify
