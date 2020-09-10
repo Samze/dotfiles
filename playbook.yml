@@ -14,6 +14,7 @@
   - name: install Homebrew casks
     homebrew_cask: name={{item}} install_options=appdir=/Applications
     with_items:
+    - flux
     - flycut
     - font-inconsolata
     - font-inconsolata-nerd-font
