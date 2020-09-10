@@ -14,10 +14,6 @@
   - name: install Homebrew casks
     homebrew_cask: name={{item}} install_options=appdir=/Applications
     with_items:
-    - 1password
-    - 1password-cli
-    - android-file-transfer
-    - evernote
     - flycut
     - font-inconsolata
     - font-inconsolata-nerd-font
