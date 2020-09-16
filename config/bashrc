@@ -9,7 +9,19 @@ alias unloadGlobalProtect='launchctl unload /Library/LaunchAgents/com.paloaltone
 alias gst='git status'
 
 # path
-export PATH="$PATH:/usr/local/bin:$HOME/go/bin:/usr/local/kubebuilder/bin:$HOME/.cargo/bin:${HOME}/.krew/bin"
+export PATH="$PATH:/usr/local/bin:$HOME/go/bin"
+
+# kubebuilder
+export PATH="$PATH:/usr/local/kubebuilder/bin"
+
+# cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# krew
+export PATH="$PATH:$HOME/.krew/bin"
+
+# gnu-sed
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # bash-completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"

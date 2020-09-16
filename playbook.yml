@@ -53,6 +53,7 @@
     - {name: gcc, install_options: ''}
     - {name: git, install_options: ''}
     - {name: git-duet, install_options: ''}
+    - {name: gnu-sed, install_options: ''}
     - {name: go, install_options: ''}
     - {name: istioctl, install_options: ''}
     - {name: imgpkg, install_options: ''}
