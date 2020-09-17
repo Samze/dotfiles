@@ -38,7 +38,7 @@
 
 [user]
   name = samze
-  email = samgzeit@gmail.com
+  email = sgunaratne@vmware.com
 
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
