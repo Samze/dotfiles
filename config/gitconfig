@@ -37,7 +37,7 @@
     default = simple
 
 [user]
-  name = samze
+  name = Sam Gunaratne
   email = sgunaratne@vmware.com
 
 [url "ssh://git@github.com/"]
