@@ -91,6 +91,7 @@
     - {name: yarn, install_options: ''}
     - {name: yq, install_options: ''}
     - {name: ytt, install_options: ''}
+    - {name: z, install_options: ''}
 
   - name: get TPM
     git:

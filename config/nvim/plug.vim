@@ -1,5 +1,6 @@
 " Add your own plugins
 
+Plug 'jremmen/vim-ripgrep'
 Plug 'gilgigilgil/anderson.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tonchis/vim-to-github'
