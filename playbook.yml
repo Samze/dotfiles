@@ -11,12 +11,14 @@
     - git-duet/tap
     - k14s/tap
     - tilt-dev/tap
+    - mike-engel/jwt-cli
 
   - name: install Homebrew casks
     homebrew_cask: name={{item}} install_options=appdir=/Applications
     with_items:
     - docker
     - flux
+    - fly
     - flycut
     - font-inconsolata
     - font-inconsolata-nerd-font
@@ -46,12 +48,15 @@
       install_options: "{{item.install_options}}"
       state: latest
     with_items:
+    - {name: adr-tools, install_options: ''}
     - {name: bash, install_options: ''}
     - {name: bash-completion@2, install_options: ''}
+    - {name: cloudfoundry/tap/bosh-cli, install_options: ''}
+    - {name: cloudfoundry/tap/cf-cli@7, install_options: ''}
     - {name: ctags, install_options: ''}
     - {name: direnv, install_options: ''}
-    - {name: fzf, install_options: ''}
     - {name: fd, install_options: ''}
+    - {name: fzf, install_options: ''}
     - {name: gcc, install_options: ''}
     - {name: git, install_options: ''}
     - {name: git-duet, install_options: ''}
@@ -61,10 +66,12 @@
     - {name: imgpkg, install_options: ''}
     - {name: istioctl, install_options: ''}
     - {name: jq, install_options: ''}
+    - {name: jwt-cli, install_options: ''}
     - {name: kapp, install_options: ''}
     - {name: kbld, install_options: ''}
     - {name: kind, install_options: ''}
     - {name: krew, install_options: ''}
+    - {name: kubebuilder, install_options: ''}
     - {name: kubectx, install_options: ''}
     - {name: kubernetes-cli, install_options: ''}
     - {name: kubernetes-helm, install_options: ''}
@@ -81,6 +88,7 @@
     - {name: shellcheck, install_options: ''}
     - {name: skaffold, install_options: ''}
     - {name: stern, install_options: ''}
+    - {name: terraform, install_options: ''}
     - {name: tig, install_options: ''}
     - {name: tilt-dev/tap/tilt, install_options: ''}
     - {name: tmux, install_options: ''}
@@ -89,7 +97,6 @@
     - {name: watch, install_options: ''}
     - {name: wget, install_options: ''}
     - {name: yarn, install_options: ''}
-    - {name: yq, install_options: ''}
     - {name: ytt, install_options: ''}
     - {name: z, install_options: ''}
 
@@ -99,12 +106,17 @@
       dest: ~/.tmux/plugins/tpm
 
   - name: install python support for nvim
-    command: pip3 install --user --upgrade pynvim
+    command: python3 -m pip install --user --upgrade pynvim
 
   - name: install Luan's Neovim distribution
     git:
       repo: https://github.com/luan/nvim
       dest: ~/.config/nvim
+
+  - name: Install "livedown" node.js package globally
+    npm:
+      name: livedown
+      global: yes
 
   - name: set up symlinks
     file:
@@ -121,4 +133,6 @@
     - {target: ~/.config/nvim/user/plug.vim, src: "{{ansible_env.PWD}}/config/nvim/plug.vim"}
     - {target: ~/.config/nvim/user/after.vim, src: "{{ansible_env.PWD}}/config/nvim/after.vim"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
-
+    - {target: /usr/local/bin/kubectl-i, src: "{{ansible_env.PWD}}/config/bin/kubectl-i"}
+    - {target: /usr/local/bin/kubectl-z, src: "{{ansible_env.PWD}}/config/bin/kubectl-z"}
+    - {target: /usr/local/bin/kubectl-eg, src: "{{ansible_env.PWD}}/config/bin/kubectl-eg"}

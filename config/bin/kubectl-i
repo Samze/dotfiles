@@ -1,0 +1,6 @@
+#!/bin/bash
+
+VERB=$1
+NOUN=$2
+shift; shift;
+kubectl get -o name $NOUN $@ | fzf | xargs kubectl $VERB $@

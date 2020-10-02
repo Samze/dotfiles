@@ -1,0 +1,6 @@
+#!/bin/bash
+VERB=$1
+NOUN=$2
+SEARCH=$3
+shift; shift; shift
+kubectl get -o name $NOUN $@ | grep $SEARCH | xargs kubectl $VERB $@
