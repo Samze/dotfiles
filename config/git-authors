@@ -1,8 +1,11 @@
 authors:
+  ec: Ed Cook; ecook
   ek: Ed King; eking
   eo: Eduardo Oliveira; eoliveira
   sg: Sam Gunaratne; sgunaratne
   tk: teddyking; teddyking
+  cw: Chis Whitty; cwhitty
+  gc: Gabriele Cipriano; gcipriano
 email:
   domain: vmware.com
 email_addresses:

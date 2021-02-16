@@ -13,36 +13,8 @@
     - tilt-dev/tap
     - mike-engel/jwt-cli
 
-  - name: install Homebrew casks
-    homebrew_cask: name={{item}} install_options=appdir=/Applications
-    with_items:
-    - docker
-    - flux
-    - fly
-    - flycut
-    - font-inconsolata
-    - font-inconsolata-nerd-font
-    - goland
-    - google-chrome
-    - google-cloud-sdk
-    - istat-menus
-    - iterm2
-    - ngrok
-    - nordvpn
-    - shiftit
-    - slack
-    - spotify
-    - steam
-    - sublime-text
-    - the-unarchiver
-    - tuple
-    - vagrant
-    - virtualbox
-    - visual-studio-code
-    - vlc
-    - zoomus
-
   - name: install Homebrew packages
+    ignore_errors: yes
     homebrew:
       name: "{{item.name}}"
       install_options: "{{item.install_options}}"
@@ -55,21 +27,34 @@
     - {name: cloudfoundry/tap/cf-cli@7, install_options: ''}
     - {name: ctags, install_options: ''}
     - {name: direnv, install_options: ''}
+    - {name: docker, install_options: ''}
+    - {name: docker, install_options: ''}
     - {name: fd, install_options: ''}
+    - {name: flux, install_options: ''}
+    - {name: fly, install_options: 'cask'}
+    - {name: flycut, install_options: ''}
+    - {name: font-inconsolata, install_options: ''}
+    - {name: font-inconsolata-nerd-font, install_options: ''}
     - {name: fzf, install_options: ''}
     - {name: gcc, install_options: ''}
     - {name: git, install_options: ''}
     - {name: git-duet, install_options: ''}
     - {name: gnu-sed, install_options: ''}
     - {name: go, install_options: ''}
+    - {name: goland, install_options: ''}
+    - {name: google-chrome, install_options: ''}
+    - {name: google-cloud-sdk, install_options: ''}
     - {name: htop, install_options: ''}
     - {name: imgpkg, install_options: ''}
+    - {name: istat-menus, install_options: ''}
     - {name: istioctl, install_options: ''}
+    - {name: iterm2, install_options: ''}
     - {name: jq, install_options: ''}
     - {name: jwt-cli, install_options: ''}
     - {name: kapp, install_options: ''}
     - {name: kbld, install_options: ''}
     - {name: kind, install_options: ''}
+    - {name: ko, install_options: ''}
     - {name: krew, install_options: ''}
     - {name: kubebuilder, install_options: ''}
     - {name: kubectx, install_options: ''}
@@ -80,25 +65,40 @@
     - {name: libgit2, install_options: ''}
     - {name: minikube, install_options: ''}
     - {name: neovim, install_options: ''}
+    - {name: ngrok, install_options: ''}
     - {name: node, install_options: ''}
+    - {name: nordvpn, install_options: ''}
     - {name: pstree, install_options: ''}
     - {name: rbenv, install_options: ''}
     - {name: ripgrep, install_options: ''}
     - {name: ruby-build, install_options: ''}
     - {name: shellcheck, install_options: ''}
+    - {name: shiftit, install_options: ''}
     - {name: skaffold, install_options: ''}
+    - {name: slack, install_options: ''}
+    - {name: spotify, install_options: ''}
+    - {name: steam, install_options: ''}
     - {name: stern, install_options: ''}
+    - {name: sublime-text, install_options: ''}
     - {name: terraform, install_options: ''}
+    - {name: the-unarchiver, install_options: ''}
     - {name: tig, install_options: ''}
     - {name: tilt-dev/tap/tilt, install_options: ''}
     - {name: tmux, install_options: ''}
     - {name: tree, install_options: ''}
+    - {name: tuple, install_options: ''}
+    - {name: vagrant, install_options: ''}
+    - {name: velero, install_options: ''}
     - {name: vendir, install_options: ''}
+    - {name: virtualbox, install_options: ''}
+    - {name: visual-studio-code, install_options: ''}
+    - {name: vlc, install_options: ''}
     - {name: watch, install_options: ''}
     - {name: wget, install_options: ''}
     - {name: yarn, install_options: ''}
     - {name: ytt, install_options: ''}
     - {name: z, install_options: ''}
+    - {name: zoomus, install_options: ''}
 
   - name: get TPM
     git:
@@ -113,7 +113,8 @@
       repo: https://github.com/luan/nvim
       dest: ~/.config/nvim
 
-  - name: Install "livedown" node.js package globally
+  - name: Install livedown node.js package globally
+    ignore_errors: yes
     npm:
       name: livedown
       global: yes

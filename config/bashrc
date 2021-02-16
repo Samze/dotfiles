@@ -23,6 +23,8 @@ export PATH="$PATH:$HOME/.krew/bin"
 # gnu-sed
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
+export GOPRIVATE=github.com/pivotal,gitlab.eng.vmware.com/services-control-plane
+
 # bash-completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
@@ -43,6 +45,18 @@ eval "$(rbenv init -)"
 
 # lastpass CLI timeout
 export LPASS_AGENT_TIMEOUT=43200
+
+# # java
+# export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# # history
+# export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+# export HISTSIZE=100000                   # big big history
+# export HISTFILESIZE=100000               # big big history
+# shopt -s histappend                      # append to history, don't overwrite it
+
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # private
 if [ -f ~/.bash_private ]; then
